@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Deaf Grandma</h1>
+  <% if params[@grandma_response] %>
+    <p>Grandma says: "<span id="grandma_says"><%= params[@grandma_response] %></span>"</p>
+  <% end %>
+  <form action="/grandma/:grandma_response" method="post">
+    Say something to Grandma:
+    <br>
+    <input type="text" name="user_input">
+    <input type="submit" value="Say it!">
+  </form>
+</div>
