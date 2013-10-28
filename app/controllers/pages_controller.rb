@@ -10,9 +10,11 @@ class PagesController < ApplicationController
     grandma_downcase = "SPEAK UP I CANT HEAR YOU!!"
 
     if params[:user_input] == params[:user_input].upcase
-      redirect_to ("/?grandma=" + grandma_upcase)
+      @grandma = grandma_upcase
+      redirect_to ("/response")
     else
-      redirect_to ("/?grandma=" + grandma_downcase)
+      @grandma = grandma_downcase
+      redirect_to ("/response")
     end
   end
 end
